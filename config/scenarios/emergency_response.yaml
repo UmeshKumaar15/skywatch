@@ -1,0 +1,16 @@
+name: emergency_response
+description: Air ambulance operations, a holding helicopter, a weather balloon launch and scripted sensor degradation / outage.
+seed: 2024
+duration: 1800
+radius: 6000
+wind: [6.0, 3.0]
+gust_intensity: 1.3
+max_agents: 40
+anomaly_rate_per_min: 0.3
+initial: {delivery_drone: 3, industrial_drone: 2, bird: 5, helicopter: 2, commercial_aircraft: 2, emergency_vehicle: 2, weather_balloon: 1}
+spawn_rates_per_min: {delivery_drone: 0.6, emergency_vehicle: 0.25, helicopter: 0.2, commercial_aircraft: 0.3, bird: 0.3}
+events:
+  - {t: 120, kind: transponder_off, target: delivery_drone}
+  - {t: 200, kind: sensor_degrade, sensor: radar-lr, factor: 2.5}
+  - {t: 300, kind: sensor_outage, sensor: radar-drone, duration: 45}
+  - {t: 420, kind: erratic, target: industrial_drone}

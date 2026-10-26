@@ -1,0 +1,22 @@
+services:
+  skywatch:
+    build: .
+    image: skywatch:latest
+    ports: ["8000:8000"]
+    volumes: ["skywatch-data:/app/data"]
+    environment:
+      # Any config key can be overridden: SKYWATCH__<SECTION>__<KEY>
+      SKYWATCH__SERVER__SCENARIO: urban_mixed
+      SKYWATCH__SERVER__TIME_SCALE: "1.0"
+    restart: unless-stopped
+
+  # Example: a second instance consuming a live ADS-B feed (dump1090 / readsb on port 30003).
+  # skywatch-adsb:
+  #   image: skywatch:latest
+  #   command: ["python", "-m", "skywatch", "serve", "--source", "sbs://adsb-receiver:30003"]
+  #   ports: ["8001:8000"]
+  #   environment:
+  #     SKYWATCH__ZONE__ORIGIN: "{lat: 52.3676, lon: 4.9041, alt: 0}"
+
+volumes:
+  skywatch-data:

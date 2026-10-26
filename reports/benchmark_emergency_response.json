@@ -1,0 +1,179 @@
+{
+ "episodes": 4,
+ "tracking": {
+  "MOTA": 0.8391379737428784,
+  "MOTP_m": 11.754619370525011,
+  "coverage": 0.8877879613574436,
+  "false_track_rate": 0.047238048055486745,
+  "id_switches": 57,
+  "id_switches_per_object_hour": 5.082982412682686,
+  "position_error_by_class_m": {
+   "bird": 24.110460362585457,
+   "commercial_aircraft": 7.148572086657245,
+   "delivery_drone": 5.265685387499074,
+   "emergency_vehicle": 7.715728552409276,
+   "helicopter": 7.686847983535545,
+   "industrial_drone": 5.49783849877054,
+   "weather_balloon": 25.781938999419133
+  }
+ },
+ "classification": {
+  "accuracy": 0.9993436822280561,
+  "samples": 35044,
+  "per_class_accuracy": {
+   "delivery_drone": 0.9987704918032787,
+   "industrial_drone": 0.9997163925127623,
+   "bird": 1.0,
+   "helicopter": 1.0,
+   "commercial_aircraft": 1.0,
+   "emergency_vehicle": 0.9980735889038721,
+   "weather_balloon": 1.0
+  }
+ },
+ "intent": {
+  "accuracy": 0.8384599288554091,
+  "samples": 23895,
+  "per_intent_accuracy": {
+   "delivery_route": 0.9710374476750764,
+   "transit": 0.6222091656874266,
+   "inspection": 0.822805578342904,
+   "emergency_response": 0.9940463533914523,
+   "drifting": 0.640506329113924,
+   "anomalous": 0.027842227378190254,
+   "holding_pattern": 0.5663679043960734,
+   "mapping": 0.8797289666854884
+  },
+  "top_confusions": [
+   {
+    "true": "holding_pattern",
+    "predicted": "transit",
+    "count": 765
+   },
+   {
+    "true": "transit",
+    "predicted": "holding_pattern",
+    "count": 729
+   },
+   {
+    "true": "transit",
+    "predicted": "mapping",
+    "count": 427
+   },
+   {
+    "true": "drifting",
+    "predicted": "transit",
+    "count": 426
+   },
+   {
+    "true": "holding_pattern",
+    "predicted": "mapping",
+    "count": 199
+   },
+   {
+    "true": "anomalous",
+    "predicted": "delivery_route",
+    "count": 197
+   },
+   {
+    "true": "mapping",
+    "predicted": "transit",
+    "count": 185
+   },
+   {
+    "true": "delivery_route",
+    "predicted": "transit",
+    "count": 143
+   }
+  ]
+ },
+ "prediction": {
+  "10s": {
+   "mixture": 49.4214322525634,
+   "top": 52.903169190860666,
+   "best_of_n": 33.651474357214724,
+   "cv": 66.63888955015977,
+   "learned": 58.20170692829893,
+   "median_mixture": 33.3585001694916,
+   "coverage_95": 0.9416080251534661,
+   "n": 6679
+  },
+  "20s": {
+   "mixture": 123.46752639171484,
+   "top": 134.91726563887678,
+   "best_of_n": 74.30090591606528,
+   "cv": 175.64426271348773,
+   "learned": 152.1610390470576,
+   "median_mixture": 77.30258076316156,
+   "coverage_95": 0.9408935774123487,
+   "n": 6446
+  },
+  "30s": {
+   "mixture": 223.05384793986755,
+   "top": 242.73679099165903,
+   "best_of_n": 126.36651422513089,
+   "cv": 313.96566244182816,
+   "learned": 270.59092611471067,
+   "median_mixture": 130.04758623944346,
+   "coverage_95": 0.9327974276527331,
+   "n": 6220
+  },
+  "60s": {
+   "mixture": 559.3276942003654,
+   "top": 626.2412204853284,
+   "best_of_n": 301.8805009757847,
+   "cv": 767.3170918433135,
+   "learned": 574.7830083864974,
+   "median_mixture": 282.7605949097871,
+   "coverage_95": 0.9371510895011705,
+   "n": 5553
+  }
+ },
+ "anomaly": {
+  "events": 17,
+  "event_recall": 0.8823529411764706,
+  "insight_precision": 0.75,
+  "insights": 36,
+  "median_delay_s": 11.800000000002001,
+  "insights_by_kind": {
+   "route_deviation": {
+    "count": 8,
+    "precision": 0.5
+   },
+   "excessive_acceleration": {
+    "count": 11,
+    "precision": 0.9090909090909091
+   },
+   "comms_loss": {
+    "count": 7,
+    "precision": 0.8571428571428571
+   },
+   "abrupt_maneuver": {
+    "count": 6,
+    "precision": 0.8333333333333334
+   },
+   "altitude_change": {
+    "count": 4,
+    "precision": 0.5
+   }
+  },
+  "injected_by_kind": {
+   "route_deviation": 3,
+   "transponder_off": 6,
+   "erratic": 6,
+   "altitude_jump": 2
+  },
+  "unmatched_insights_by_kind_class": {
+   "route_deviation|industrial_drone": 2,
+   "route_deviation|delivery_drone": 2,
+   "altitude_change|helicopter": 1,
+   "excessive_acceleration|delivery_drone": 1,
+   "altitude_change|delivery_drone": 1,
+   "comms_loss|delivery_drone": 1,
+   "abrupt_maneuver|delivery_drone": 1
+  }
+ },
+ "performance": {
+  "wall_s_per_sim_s": 0.1399098794658979,
+  "realtime_factor": 7.147458091004528
+ }
+}

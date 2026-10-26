@@ -1,0 +1,195 @@
+{
+ "episodes": 4,
+ "tracking": {
+  "MOTA": 0.9147352435958077,
+  "MOTP_m": 8.839326998751622,
+  "coverage": 0.9475798086418217,
+  "false_track_rate": 0.030554241662310074,
+  "id_switches": 276,
+  "id_switches_per_object_hour": 8.245164181333864,
+  "position_error_by_class_m": {
+   "bird": 20.504469563818706,
+   "commercial_aircraft": 5.603936665757795,
+   "delivery_drone": 4.0122994316057214,
+   "industrial_drone": 2.0575826072470282,
+   "recreational_drone": 6.0503430105027896
+  }
+ },
+ "classification": {
+  "accuracy": 0.9986460727201468,
+  "samples": 112266,
+  "per_class_accuracy": {
+   "delivery_drone": 0.9973926939359108,
+   "recreational_drone": 0.9978846153846154,
+   "industrial_drone": 0.999205358156431,
+   "bird": 0.9998522895125553,
+   "commercial_aircraft": 1.0
+  }
+ },
+ "intent": {
+  "accuracy": 0.8837864182822485,
+  "samples": 73864,
+  "per_intent_accuracy": {
+   "delivery_route": 0.9744758990053558,
+   "recreational": 0.9509583248073119,
+   "mapping": 0.8337016574585635,
+   "transit": 0.7647592663354986,
+   "inspection": 0.6788559015206372,
+   "anomalous": 0.06326304106548279,
+   "holding_pattern": 0.37815126050420167
+  },
+  "top_confusions": [
+   {
+    "true": "transit",
+    "predicted": "mapping",
+    "count": 2683
+   },
+   {
+    "true": "transit",
+    "predicted": "delivery_route",
+    "count": 1797
+   },
+   {
+    "true": "delivery_route",
+    "predicted": "transit",
+    "count": 683
+   },
+   {
+    "true": "recreational",
+    "predicted": "transit",
+    "count": 491
+   },
+   {
+    "true": "inspection",
+    "predicted": "transit",
+    "count": 480
+   },
+   {
+    "true": "transit",
+    "predicted": "inspection",
+    "count": 445
+   },
+   {
+    "true": "anomalous",
+    "predicted": "delivery_route",
+    "count": 411
+   },
+   {
+    "true": "mapping",
+    "predicted": "transit",
+    "count": 301
+   }
+  ]
+ },
+ "prediction": {
+  "10s": {
+   "mixture": 36.214953286028276,
+   "top": 38.951042517982685,
+   "best_of_n": 25.08322860806633,
+   "cv": 47.85723985585679,
+   "learned": 39.14237057001769,
+   "median_mixture": 16.447588250986982,
+   "coverage_95": 0.935491340187089,
+   "n": 21594
+  },
+  "20s": {
+   "mixture": 75.37137652644952,
+   "top": 84.24800954489294,
+   "best_of_n": 48.41380136801755,
+   "cv": 105.73796841431005,
+   "learned": 79.60555819374484,
+   "median_mixture": 39.87459115226657,
+   "coverage_95": 0.9383499546690843,
+   "n": 20957
+  },
+  "30s": {
+   "mixture": 121.0898312238137,
+   "top": 135.4900759601125,
+   "best_of_n": 75.1551385269085,
+   "cv": 174.14724919489154,
+   "learned": 134.18622051977675,
+   "median_mixture": 76.61521744463136,
+   "coverage_95": 0.9343471627540726,
+   "n": 20319
+  },
+  "60s": {
+   "mixture": 285.46420379101767,
+   "top": 326.76656710282936,
+   "best_of_n": 156.99062532446362,
+   "cv": 425.1426965219688,
+   "learned": 367.04537638031275,
+   "median_mixture": 211.4722549008908,
+   "coverage_95": 0.9478011575701845,
+   "n": 18487
+  }
+ },
+ "anomaly": {
+  "events": 20,
+  "event_recall": 0.9,
+  "insight_precision": 0.3404255319148936,
+  "insights": 94,
+  "median_delay_s": 7.599999999980476,
+  "insights_by_kind": {
+   "route_deviation": {
+    "count": 13,
+    "precision": 0.0
+   },
+   "excessive_acceleration": {
+    "count": 17,
+    "precision": 0.4117647058823529
+   },
+   "abrupt_maneuver": {
+    "count": 22,
+    "precision": 0.4090909090909091
+   },
+   "signal_loss": {
+    "count": 6,
+    "precision": 0.0
+   },
+   "comms_loss": {
+    "count": 7,
+    "precision": 0.42857142857142855
+   },
+   "unusual_path": {
+    "count": 11,
+    "precision": 0.36363636363636365
+   },
+   "altitude_change": {
+    "count": 15,
+    "precision": 0.4
+   },
+   "prolonged_hover": {
+    "count": 3,
+    "precision": 1.0
+   }
+  },
+  "injected_by_kind": {
+   "erratic": 5,
+   "route_deviation": 1,
+   "long_hover": 5,
+   "transponder_off": 3,
+   "altitude_jump": 6
+  },
+  "unmatched_insights_by_kind_class": {
+   "route_deviation|industrial_drone": 10,
+   "abrupt_maneuver|industrial_drone": 8,
+   "excessive_acceleration|recreational_drone": 6,
+   "comms_loss|delivery_drone": 4,
+   "altitude_change|recreational_drone": 4,
+   "altitude_change|delivery_drone": 4,
+   "unusual_path|delivery_drone": 4,
+   "signal_loss|recreational_drone": 3,
+   "signal_loss|delivery_drone": 3,
+   "excessive_acceleration|delivery_drone": 3,
+   "unusual_path|recreational_drone": 3,
+   "abrupt_maneuver|delivery_drone": 3,
+   "route_deviation|recreational_drone": 2,
+   "abrupt_maneuver|recreational_drone": 2,
+   "altitude_change|none": 1
+  }
+ },
+ "performance": {
+  "wall_s_per_sim_s": 0.5278487488627434,
+  "realtime_factor": 1.8944820882014257
+ }
+}

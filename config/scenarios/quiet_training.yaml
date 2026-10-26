@@ -1,0 +1,10 @@
+name: quiet_training
+description: Balanced class mix used as a template for randomised training / benchmark episodes.
+seed: 1
+duration: 600
+radius: 6000
+wind: [3.0, 1.0]
+max_agents: 40
+anomaly_rate_per_min: 0.6
+initial: {delivery_drone: 4, recreational_drone: 3, industrial_drone: 3, bird: 5, helicopter: 2, commercial_aircraft: 2, emergency_vehicle: 2, weather_balloon: 2, unknown: 2}
+spawn_rates_per_min: {delivery_drone: 0.6, recreational_drone: 0.3, industrial_drone: 0.3, bird: 0.4, helicopter: 0.2, commercial_aircraft: 0.3, emergency_vehicle: 0.15, weather_balloon: 0.1, unknown: 0.15}

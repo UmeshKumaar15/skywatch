@@ -1,0 +1,11 @@
+name: dense_swarm
+description: Dense drone traffic with a tight formation of 9 drones and bird flocks - stresses data association and identity management.
+seed: 7
+duration: 1800
+radius: 5000
+wind: [2.0, -1.0]
+max_agents: 80
+anomaly_rate_per_min: 0.6
+initial: {delivery_drone: 14, recreational_drone: 6, industrial_drone: 4, bird: 14, helicopter: 0, commercial_aircraft: 1}
+formations: [{count: 9, spacing: 22}]
+spawn_rates_per_min: {delivery_drone: 2.5, recreational_drone: 0.5, bird: 1.0, commercial_aircraft: 0.2}

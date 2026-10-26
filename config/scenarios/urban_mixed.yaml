@@ -1,0 +1,11 @@
+name: urban_mixed
+description: Mixed urban airspace - delivery routes, recreational and industrial drones, birds, helicopters and airliners.
+seed: 42
+duration: 3600
+radius: 6000
+wind: [4.0, 1.5]
+gust_intensity: 1.0
+max_agents: 45
+anomaly_rate_per_min: 0.5
+initial: {delivery_drone: 5, recreational_drone: 3, industrial_drone: 3, bird: 6, helicopter: 1, commercial_aircraft: 2, emergency_vehicle: 0, weather_balloon: 1, unknown: 1}
+spawn_rates_per_min: {delivery_drone: 0.9, recreational_drone: 0.3, industrial_drone: 0.2, bird: 0.4, helicopter: 0.15, commercial_aircraft: 0.35, emergency_vehicle: 0.08, weather_balloon: 0.02, unknown: 0.05}

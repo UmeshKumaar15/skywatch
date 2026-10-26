@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyWatch</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="5.5" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".6"/><path d="M12 12 L20 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16.5" cy="9" r="1.4" fill="currentColor"/></svg><span>SkyWatch</span></div>
+  <div class="seg" role="tablist" aria-label="Mode">
+    <button id="modeLive" class="active" role="tab">Live</button>
+    <button id="modePlayback" role="tab">Playback</button>
+  </div>
+  <div class="group live-only">
+    <label>Scenario <select id="scenario"></select></label>
+    <label>Seed <input id="seed" type="number" style="width:5.5em"></label>
+    <button id="restart" title="Restart the scenario">Restart</button>
+    <button id="pause">Pause</button>
+    <label>Speed <select id="speed"><option>0.5</option><option selected>1</option><option>2</option><option>5</option><option>10</option></select></label>
+  </div>
+  <div class="spacer"></div>
+  <div class="clock"><span id="clock">t = –</span><span id="conn" class="dot" title="connection"></span></div>
+</header>
+
+<main class="layout">
+  <section class="mapwrap">
+    <canvas id="map"></canvas>
+    <div class="overlay-tl">
+      <div class="chips" id="layers"></div>
+    </div>
+    <div class="overlay-bl" id="legend"></div>
+    <div class="overlay-br">
+      <button id="zoomIn" title="Zoom in">+</button><button id="zoomOut" title="Zoom out">−</button><button id="zoomFit" title="Fit zone">⤢</button>
+    </div>
+    <div class="overlay-tr" id="statline"></div>
+  </section>
+
+  <aside class="panel">
+    <nav class="tabs" role="tablist">
+      <button data-tab="track" class="active">Track</button>
+      <button data-tab="tracks">Tracks</button>
+      <button data-tab="insights">Insights <span id="insCount" class="badge"></span></button>
+      <button data-tab="system">System</button>
+    </nav>
+    <div class="tabbody" id="tab-track"><div class="empty">Select a track on the map or from the Tracks list.</div></div>
+    <div class="tabbody hidden" id="tab-tracks"></div>
+    <div class="tabbody hidden" id="tab-insights"></div>
+    <div class="tabbody hidden" id="tab-system"></div>
+  </aside>
+</main>
+
+<footer class="playbar hidden" id="playbar">
+  <label>Run <select id="runSel"></select></label>
+  <button id="pbBack" title="Step back">⏮</button>
+  <button id="pbPlay" title="Play / pause">▶</button>
+  <button id="pbFwd" title="Step forward">⏭</button>
+  <label>Speed <select id="pbSpeed"><option>0.5</option><option selected>1</option><option>2</option><option>5</option><option>10</option></select></label>
+  <input id="scrub" type="range" min="0" max="0" step="1" value="0">
+  <span id="pbTime" class="mono">–</span>
+  <label class="chk"><input id="pbActual" type="checkbox" checked> Show actual path</label>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

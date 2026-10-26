@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skywatch"
+version = "0.1.0"
+description = "Real-time airspace monitoring, multi-object tracking and probabilistic trajectory prediction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "scipy>=1.11", "pyyaml>=6.0", "fastapi>=0.110", "uvicorn>=0.29", "websockets>=12.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+
+[project.scripts]
+skywatch = "skywatch.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["skywatch*"]
+
+[tool.setuptools.package-data]
+skywatch = ["server/static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
